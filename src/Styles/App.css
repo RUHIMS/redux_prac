@@ -1,0 +1,14 @@
+.img-wrapper img{
+    width: 100px;
+}
+
+.text-wrapper span{
+    display: block;
+}
+
+.items-wrapper img{
+    width: 60px;
+    position: absolute;
+    right: 1%;
+    top: 1%;
+}
