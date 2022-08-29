@@ -1,11 +1,21 @@
 import Samsung from '../Images/Samsung.jpg';
-import Cart from '../Images/cart.jpg';
-export const HomePage = () =>{
+export const HomePage = (props) =>{
+    console.log('propsdata',props);
+   const handleButtonClick = () =>{
+       const cardItem = {
+           id: 1,
+           name: 'Samsung Galaxy',
+           price: 16000
+       }
+    props.addItems(cardItem)
+   }
+   const handleButtonClickRemove = () =>{
+       console.log('remove')
+    props.removeFromCart();
+}
+
     return(
         <div>
-            <div className = "items-wrapper">
-                 <img src ={Cart} alt ='cart' />
-             </div>
              <h4 style ={{'textAlign': 'center'}}>This is Home Page</h4>
             <div className ="cart-wrapper" >
                <div className = "img-wrapper">
@@ -16,8 +26,9 @@ export const HomePage = () =>{
                        <span>Price : Rs 16000</span>
                        </div>
             </div>
-            <div class ="button-wrapper">
-                <button>Add to cart</button>
+            <div className ="button-wrapper">
+                <button onClick = {handleButtonClick}>Add to cart</button>
+                <button style ={{position: 'relative', left:'10px'}} onClick = {handleButtonClickRemove}>Remove</button>
             </div>
 
         </div>
